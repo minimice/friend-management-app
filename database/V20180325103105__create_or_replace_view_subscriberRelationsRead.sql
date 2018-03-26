@@ -13,11 +13,3 @@ LEFT JOIN friendshipdb.User userEmail2
 WHERE NOT EXISTS 
 (SELECT * FROM friendshipdb.UserRelationship 
       WHERE user1 = subscriber AND user2 = provider AND status = 3)
---LEFT JOIN friendshipdb.UserUpdatesSubscription userUpdatesSubscription
---      ON userRelationship1.user1 = userUpdatesSubscription.subscriber
- --     AND userRelationship1.user2 = userUpdatesSubscription.provider
---WHERE status = 1 and user2 in (SELECT user1 FROM friendshipdb.UserRelationship WHERE user2 = userRelationship1.user1 and status = 1)
-
-
--- SELECT * FROM friendshipdb.UserRelationship WHERE user1 = 1 and status = 1 and user2 in (SELECT user1 FROM friendshipdb.UserRelationship WHERE user2 = 1 and status = 1)
-
