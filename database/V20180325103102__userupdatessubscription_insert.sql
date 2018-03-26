@@ -1,0 +1,2 @@
+INSERT INTO friendshipdb.UserUpdatesSubscription (subscriber,provider,subscriptionStatus) VALUES(1,2,1);
+INSERT INTO friendshipdb.UserUpdatesSubscription (subscriber,provider,subscriptionStatus) VALUES(6,1,1);

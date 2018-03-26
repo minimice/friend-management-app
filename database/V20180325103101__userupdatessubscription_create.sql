@@ -1,8 +1,8 @@
 CREATE TABLE friendshipdb.UserUpdatesSubscription (
-    user1 BIGINT(36) NOT NULL,
-    user2 BIGINT(36) NOT NULL,
-    status INT NOT NULL,
-    PRIMARY KEY (user1,user2)
+    subscriber BIGINT(36) NOT NULL,
+    provider BIGINT(36) NOT NULL,
+    subscriptionStatus INT NOT NULL,
+    PRIMARY KEY (subscriber,provider)
 );
 
 -- Status values (Only allowed a single value at any time)
