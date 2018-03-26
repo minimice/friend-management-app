@@ -8,6 +8,7 @@ CREATE TABLE friendshipdb.UserRelationship (
 -- Status types, can only have a single value at any time
 -- 0 means sent-friend-request (user1 is adding a friend connection to user2)
 -- 1 means friends-with (user1 is friends with user2)
+-- 2 means recieved-friend-request-from (user1 received a friend request from user2)
 -- 3 means blocked (user1 blocked user2)
 -- 4 means unblocked (user1 unblocked user2)
 -- 5 means unfriended (user1 unfriended user2)
