@@ -24,7 +24,8 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DBHOST=localhost
+      - DBHOST=mysql
       - DBUSER=root
+      - DBPORT=3306
       - DBPASSWORD=Singpower
       - DBDATABASE=friendshipdb

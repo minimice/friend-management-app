@@ -14,4 +14,4 @@ app.use(errorHandlerMiddleware);
 app.listen(8000);
 
 logger.info("Friend management query API started listening on port 8000");
-logger.info("To test, goto http://localhost:8000/api/monitoring/ping");
+logger.info("To test, go to http://localhost:8000/api/monitoring/ping");
