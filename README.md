@@ -15,7 +15,7 @@ Clone the repo, change directory to the root directory and run `docker-compose u
 I made modifications which only start the API containers after the MySQL container service has finished loading, i.e. port 3306 is accesible.
 
 ## Database
-Running MySQL.  Scripts located in the database folder are executed in ascending order and dated according to YYYMMDDHHMMSS format.  This allows for easy migration and testing.
+Running MySQL.  Scripts located in the database folder are executed in ascending order and dated according to YYYYMMDDHHMMSS format.  This allows for easy migration and testing.
 I have added scripts to prepopulate the database.  In a real production environment this would not be done, but schema changes would be added in the same way.
 
 ## Design overview
