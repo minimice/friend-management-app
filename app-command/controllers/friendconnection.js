@@ -8,10 +8,10 @@ router.use(bodyParser.json());
 const db = require('../utilities/db');
 
 // Test cases
-// curl -d '{  "friends": [ "andy@example.com", "john@example.com" ]}' -H 'content-type:application/json' "http://localhost:8000/api/friendconnection"
-// curl -d '{  "friends": [ "andy1@example.com", "john@example.com" ]}' -H 'content-type:application/json' "http://localhost:8000/api/friendconnection"
-// curl -d '{  "friends": [ "andy@example.com", "john2@example.com" ]}' -H 'content-type:application/json' "http://localhost:8000/api/friendconnection"
-// curl -d '{  "friends": [ "andy@example.com", "nonuser@example.com" ]}' -H 'content-type:application/json' "http://localhost:8000/api/friendconnection"
+// curl -d '{  "friends": [ "andy@example.com", "john@example.com" ]}' -H 'content-type:application/json' "http://localhost:8001/api/friendconnection"
+// curl -d '{  "friends": [ "andy1@example.com", "john@example.com" ]}' -H 'content-type:application/json' "http://localhost:8001/api/friendconnection"
+// curl -d '{  "friends": [ "andy@example.com", "john2@example.com" ]}' -H 'content-type:application/json' "http://localhost:8001/api/friendconnection"
+// curl -d '{  "friends": [ "andy@example.com", "nonuser@example.com" ]}' -H 'content-type:application/json' "http://localhost:8001/api/friendconnection"
 
 router.post('/', function(req, res) {
     // Set response header
