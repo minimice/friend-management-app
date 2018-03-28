@@ -1,0 +1,43 @@
+{
+  "name": "friend-management-app-command-api",
+  "version": "1.0.0",
+  "description": "Friend Managemenet Command Api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha --watch **/*.spec.js",
+    "code-coverage": "nyc mocha **/*.spec.js"
+  },
+  "nyc": {
+    "include": [
+      "**/*.js"
+    ],
+    "exclude": [
+      "**/*.spec.js"
+    ],
+    "reporter": [
+      "text-summary",
+      "text"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minimice/friend-management-app.git"
+  },
+  "author": "Chooi Guan Lim",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.5",
+    "body-parser": "^1.18.2",
+    "mysql": "^2.14.1",
+    "response-time": "^2.3.2",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "nyc": "^11.2.1",
+    "sinon": "^4.0.0",
+    "mocha": "^3.5.3",
+    "superagent": "^3.6.2"
+  }
+}
