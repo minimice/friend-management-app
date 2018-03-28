@@ -29,3 +29,19 @@ services:
       - DBPORT=3306
       - DBPASSWORD=Singpower
       - DBDATABASE=friendshipdb
+  friends-command-api:
+    build: ./app-command
+    depends_on:
+      - "mysql"
+    image: local/friends-command-api:latest
+    # Wait for mysql to start before starting node
+    command: sh -c './utilities/wait-for-it.sh mysql:3306 -- node index.js'
+    container_name: friends-command-api
+    ports:
+      - "8001:8001"
+    environment:
+      - DBHOST=mysql
+      - DBUSER=root
+      - DBPORT=3306
+      - DBPASSWORD=Singpower
+      - DBDATABASE=friendshipdb
