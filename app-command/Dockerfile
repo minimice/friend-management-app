@@ -19,7 +19,7 @@ RUN npm install --loglevel warn --production
 
 COPY . .
 
-EXPOSE 8000
+EXPOSE 8001
 
 # node index.js instead of npm start to reduce number of processes
 # https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md
