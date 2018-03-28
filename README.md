@@ -27,6 +27,8 @@ Each endpoint is placed in its own controller following the Single Responsibilit
 ## Testing and further refactoring
 I have only done manual testing, but the next step would be to add automated tests.
 I did not get time to push written SQL statements into models, but at least all SQL queries specific to endpoints are placed in their own file.
+It would also be nice to add Swagger documentation, I didn't get time to do this either.
+And what would be really nice would be to get this into a pipe and then have AWS cloudformation deploy it automatically, but this is way out of scope. :)
 
 ### Test cases
 I am using curl to deliver POST/GET payloads to the various APIs.
