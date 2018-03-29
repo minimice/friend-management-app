@@ -6,7 +6,7 @@ Author: [Lim Chooi Guan](https://www.linkedin.com/in/cgl88/) (Team Cloud Lead @ 
 ## Pre-requisites
 * Docker
 * Shell environment to run scripts (like bash!)
-* Curl (for manual testing)
+* Curl (for manual testing) or your favourite POST/REST client like Postman
 
 ## Quick start
 Clone the repo, change directory to the root directory and run `docker-compose up --build`
