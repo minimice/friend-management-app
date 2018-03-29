@@ -31,7 +31,7 @@ It would also be nice to add Swagger documentation, I didn't get time to do this
 And what would be really nice would be to get this into a pipe and then have AWS cloudformation deploy it automatically, but this is way out of scope. :)
 
 ### Test cases
-I am using curl to deliver POST/GET payloads to the various APIs.
+I am using curl to deliver POST/GET payloads to the various APIs.  SQL injection attacks are twarted by escaping all input through the use of ? character as a placeholder for values when performing queries.  This is documented in the [mysql](https://github.com/mysqljs/mysql) client documentation.
 
 #### Friendslist
 `curl -d '{  "email": "andy@example.com" }' -H 'content-type:application/json' -X GET "http://localhost:8000/api/friendslist"`
