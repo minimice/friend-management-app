@@ -40,12 +40,20 @@ I am using curl to deliver POST/GET payloads to the various APIs.  SQL injection
 
 `curl -d '{  "email": "nonuser@example.com" }' -H 'content-type:application/json' -X GET "http://localhost:8000/api/friendslist"`
 
+Possible responses
+- Number of friends is displayed (0 or more, if you attempt to show a non existing user this will show as 0)
+- Malformed JSON
+
 #### Commonfriendslist endpoint
 `curl -d '{  "friends": [ "andy@example.com", "john@example.com" ]}' -H 'content-type:application/json' -X GET "http://localhost:8000/api/commonfriendslist"`
 
 `curl -d '{  "friends": [ "andy@example.com", "john2@example.com" ]}' -H 'content-type:application/json' -X GET "http://localhost:8000/api/commonfriendslist"`
 
 `curl -d '{  "friends": [ "andy@example.com", "nonuser@example.com" ]}' -H 'content-type:application/json' -X GET "http://localhost:8000/api/commonfriendslist"`
+
+Possible responses
+- Common friends count is displayed (0 or more, if you attempt to connect 1 or more non existing users this will show as 0)
+- Malformed JSON
 
 #### Receiveupdatesrecipientslist endpoint
 `curl -d '{  "sender": "andy@example.com", "text": "Hello World! kate@example.com john2@example.com" }' -H 'content-type:application/json' -X GET "http://localhost:8000/api/receiveupdatesrecipientslist"`
@@ -58,6 +66,11 @@ I am using curl to deliver POST/GET payloads to the various APIs.  SQL injection
 
 `curl -d '{  "sender": "nonuser@example.com", "text": "Hello World! bobby@example.com john2@example.com" }' -H 'content-type:application/json' -X GET "http://localhost:8000/api/receiveupdatesrecipientslist"`
 
+Possible responses
+- Successfully display recipient recievers
+- Sender is invalid (i.e. it is not an existing user of the system)
+- Malformed JSON
+
 #### Friendconnection endpoint
 `curl -d '{  "friends": [ "andy@example.com", "john@example.com" ]}' -H 'content-type:application/json' "http://localhost:8001/api/friendconnection"`
 
@@ -67,6 +80,12 @@ I am using curl to deliver POST/GET payloads to the various APIs.  SQL injection
 
 `curl -d '{  "friends": [ "andy@example.com", "nonuser@example.com" ]}' -H 'content-type:application/json' "http://localhost:8001/api/friendconnection"`
 
+Possible responses
+- Successfully connect two friends
+- Already connected as friends
+- Unable to connect (due to one or more non existing users, or it could be that one user is blocking another user)
+- Malformed JSON
+
 #### Blockupdates endpoint
 `curl -d '{  "requestor": "andy@example.com",  "target": "common@example.com" }' -H 'content-type:application/json' "http://localhost:8001/api/blockupdates"`
 
@@ -74,9 +93,19 @@ I am using curl to deliver POST/GET payloads to the various APIs.  SQL injection
 
 `curl -d '{  "requestor": "andy@example.com",  "target": "nonuser@example.com" }' -H 'content-type:application/json' "http://localhost:8001/api/blockupdates"`
 
+Possible responses
+- Successfully blocked target from requestor
+- Unable to block (due to one or more non existing users)
+- Malformed JSON
+
 #### Subscribeupdates endpoint
 `curl -d '{  "requestor": "andy@example.com",  "target": "common@example.com" }' -H 'content-type:application/json' "http://localhost:8001/api/subscribeupdates"`
 
 `curl -d '{  "requestor": "andy@example.com",  "target": "bobby@example.com" }' -H 'content-type:application/json' "http://localhost:8001/api/subscribeupdates"`
 
 `curl -d '{  "requestor": "andy@example.com",  "target": "nonuser@example.com" }' -H 'content-type:application/json' "http://localhost:8001/api/subscribeupdates"`
+
+Possible responses
+- Requestor has successfully subcribed to target
+- Unable to subscribe (due to one or more non existing users)
+- Malformed JSON
